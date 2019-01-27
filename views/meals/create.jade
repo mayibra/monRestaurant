@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+  section
+    .container
+      .row
+        .col-lg-12.text-center
+            form(action="/meals/edit/#{meal._id}", method="POST")
+                .form-group
+                    label(for='name') Name
+                    input#name.form-control(name="name", type="text", placeholder="Enter the name of a meal")
+                .form-group
+                    label(for='allergies') Allergies
+                    input#allergies.form-control(name="allergies", type="text", placeholder="Save your Allergies")
+                .form-group
+                    label(for='ingredients') Ingredients
+                    input#ingredients.form-control(name="ingredients", type="text", placeholder="Enter the ingredients")
+                .form-group
+                    label(for='vegan') Vegan
+                    input#vegan.form-control(name="vegan", type="text", placeholder="Are you vegan ?")
+                .form-group
+                    label(for='halal') Halal
+                    input#halal.form-control(name="halal", type="text", placeholder="Halal or Not ?")
+                 .form-group
+                    label(for='kosher') Kosher
+                    input#kosher.form-control(name="kosher", type="text", placeholder="Kosher or Not ?")
+                .form-group
+                    .btn-group
+                        button.btn.btn-primary(type="submit") Create
+                        button.btn.btn-danger Cancel
